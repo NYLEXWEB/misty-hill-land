@@ -45,9 +45,9 @@ export default function Footer() {
         </button>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-12 gap-6 pb-4">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-4">
         {/* Column 1: Brand Info */}
-        <div className="lg:col-span-4 flex flex-col justify-center">
+        <div className="flex flex-col justify-center">
           <div className="flex items-center gap-3 mb-1.5">
             <div className="w-6 h-8.5 flex items-center justify-center text-luxury-beige">
               <svg viewBox="0 0 100 140" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,11 +70,11 @@ export default function Footer() {
         </div>
 
         {/* Column 2: Quick Links */}
-        <div className="lg:col-span-3 lg:col-start-6 flex flex-col justify-center">
+        <div className="flex flex-col justify-center">
           <h4 className="font-playfair text-xs font-bold text-white tracking-wider mb-2">
             Quick Links
           </h4>
-          <nav className="grid grid-cols-2 gap-x-4 gap-y-1.5 max-w-[240px]">
+          <nav className="grid grid-cols-2 gap-x-4 gap-y-1.5">
             {[
               { name: "Home", id: "home" },
               { name: "About", id: "about" },
@@ -95,11 +95,11 @@ export default function Footer() {
         </div>
 
         {/* Column 3: Contact */}
-        <div className="lg:col-span-4 lg:col-start-9 flex flex-col justify-center">
+        <div className="flex flex-col justify-center">
           <h4 className="font-playfair text-xs font-bold text-white tracking-wider mb-2">
             Contact
           </h4>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-x-4 gap-y-1.5 text-[11px] text-luxury-beige/65">
+          <div className="flex flex-col gap-1.5 text-[11px] text-luxury-beige/65">
             <div className="flex items-center gap-2">
               <MapPin className="w-3.5 h-3.5 text-luxury-beige/40 shrink-0" />
               <span>Wayanad, Kerala, India</span>
@@ -110,12 +110,29 @@ export default function Footer() {
                 +91 98460 12345
               </a>
             </div>
-            <div className="flex items-center gap-2 sm:col-span-2 lg:col-span-1">
+            <div className="flex items-center gap-2">
               <Mail className="w-3.5 h-3.5 text-luxury-beige/40 shrink-0" />
               <a href="mailto:stay@mistyhillland.com" className="hover:text-white transition-colors text-[10px] sm:text-[11px]">
                 stay@mistyhillland.com
               </a>
             </div>
+          </div>
+        </div>
+
+        {/* Column 4: Map */}
+        <div className="flex flex-col justify-center">
+          <h4 className="font-playfair text-xs font-bold text-white tracking-wider mb-2">
+            Our Location
+          </h4>
+          <div className="w-full h-24 rounded-lg overflow-hidden border border-luxury-beige/15 shadow-inner relative">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d250157.65935965682!2d75.9228834444583!3d11.603370335017265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba60c2c1161d9a3%3A0xc3b98c3652de44cc!2sWayanad%2C%20Kerala!5e0!3m2!1sen!2sin!4v1717900000000!5m2!1sen!2sin"
+              className="w-full h-full border-0 filter grayscale invert-[0.9] sepia-[0.25] brightness-[0.9] contrast-[1.15] opacity-75 hover:opacity-100 transition-all duration-300"
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Misty Hill Land Location Map"
+            ></iframe>
           </div>
         </div>
       </div>

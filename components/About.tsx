@@ -23,7 +23,7 @@ export default function About() {
 
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-2xl">
               <Image
-                src="/images/about_villa.png"
+                src="/hero/file_0000000062ac72078d899052a7e2774e.png"
                 alt="Misty Hill Land Villa Exterior"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
