@@ -43,20 +43,22 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
           isScrolled
-            ? "bg-luxury-bg/90 backdrop-blur-md shadow-md py-4 border-b border-luxury-beige/40"
-            : "bg-transparent py-6"
+            ? "top-4 w-[94%] max-w-6xl rounded-full bg-white/95 backdrop-blur-md shadow-lg py-2 px-6 border border-luxury-beige/30"
+            : "top-0 w-full rounded-none bg-transparent py-6 px-6 md:px-12 border-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="w-full flex items-center justify-between">
           {/* Logo Section */}
           <a
             href="#home"
             onClick={(e) => handleScrollTo(e, "#home")}
-            className="flex items-center gap-3 group"
+            className="flex items-center gap-2 md:gap-3 group"
           >
-            <div className="relative w-10 h-14 flex items-center justify-center">
+            <div className={`relative transition-all duration-500 flex items-center justify-center ${
+              isScrolled ? "w-7 h-10" : "w-10 h-14"
+            }`}>
               {/* Luxury Badge Logo */}
               <svg
                 viewBox="0 0 100 140"
@@ -96,15 +98,15 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <span
-                className={`font-playfair text-lg md:text-xl font-bold tracking-[0.15em] transition-colors duration-300 ${
-                  isScrolled ? "text-luxury-charcoal" : "text-white"
+                className={`font-playfair font-bold tracking-[0.15em] transition-all duration-300 ${
+                  isScrolled ? "text-sm md:text-base text-luxury-charcoal" : "text-lg md:text-xl text-white"
                 }`}
               >
                 MISTY HILL LAND
               </span>
               <span
-                className={`text-[9px] uppercase tracking-[0.3em] font-semibold transition-colors duration-300 ${
-                  isScrolled ? "text-luxury-forest" : "text-luxury-beige"
+                className={`uppercase tracking-[0.3em] font-semibold transition-all duration-300 ${
+                  isScrolled ? "text-[7px] text-luxury-forest" : "text-[9px] text-luxury-beige"
                 }`}
               >
                 Villa Stays • Wayanad
@@ -113,16 +115,18 @@ export default function Navbar() {
           </a>
 
           {/* Center Links (Desktop) */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className={`hidden lg:flex items-center transition-all duration-300 ${
+            isScrolled ? "gap-4 xl:gap-6" : "gap-6 xl:gap-8"
+          }`}>
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleScrollTo(e, link.href)}
-                className={`text-sm font-medium tracking-wider uppercase transition-all duration-300 relative py-1 hover:opacity-100 group ${
+                className={`font-semibold tracking-widest uppercase transition-all duration-300 relative py-1 hover:opacity-100 group ${
                   isScrolled
-                    ? "text-luxury-charcoal/80 hover:text-luxury-forest"
-                    : "text-white/80 hover:text-white"
+                    ? "text-[10px] xl:text-xs text-luxury-charcoal/80 hover:text-luxury-forest"
+                    : "text-xs text-white/80 hover:text-white"
                 }`}
               >
                 {link.name}
@@ -141,14 +145,14 @@ export default function Navbar() {
               href="https://wa.me/919000000000?text=Hi,%20I'm%20interested%20in%20booking%20a%20stay%20at%20Misty%20Hill%20Land!"
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-2 px-6 py-3 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 ${
+              className={`flex items-center gap-1.5 rounded-full uppercase tracking-wider font-bold transition-all duration-300 ${
                 isScrolled
-                  ? "bg-luxury-forest text-white hover:bg-luxury-forest/90"
-                  : "bg-white text-luxury-forest hover:bg-luxury-beige"
+                  ? "bg-luxury-forest text-white hover:bg-luxury-forest/90 px-4 py-2 text-[10px]"
+                  : "bg-white text-luxury-forest hover:bg-luxury-beige px-6 py-3 text-xs"
               }`}
             >
               Book Your Stay
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-3 h-3" />
             </a>
           </div>
 

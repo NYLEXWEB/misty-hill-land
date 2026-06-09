@@ -10,6 +10,7 @@ import Experiences from "@/components/Experiences";
 import Testimonials from "@/components/Testimonials";
 import BookingCTA from "@/components/BookingCTA";
 import Footer from "@/components/Footer";
+import FloatingSocials from "@/components/FloatingSocials";
 
 export default function Home() {
   // Local Business Structured Data for SEO Rich Snippets
@@ -110,6 +111,7 @@ export default function Home() {
         </main>
 
         <Footer />
+        <FloatingSocials />
       </div>
     </>
   );
